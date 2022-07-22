@@ -2,7 +2,7 @@
 Java DiscordBot to learn
 
 Working:
-PingPong command
+PingPong command /b
 JoinMessage
 
 Bugs:
