@@ -19,13 +19,14 @@ public class Main {
         config = Dotenv.configure().load();
         String token = config.get("TOKEN");
 
-        JDA api = JDABuilder.createDefault(token)
+        JDA jda = JDABuilder.createDefault(token)
                 .setActivity(Activity.watching("Darkness"))
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)
+                .enableIntents(GatewayIntent.GUILD_MEMBERS)
                 //listener
                 .addEventListeners(new PingEvents())
-                //.addEventListeners(new OnJoinEvents())
+                .addEventListeners(new OnJoinEvents())
                 .build();
     }
 }
