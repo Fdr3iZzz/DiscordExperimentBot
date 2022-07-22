@@ -1,2 +1,9 @@
 # DiscordExperimentBot
-Java DiscordBot to learn/ get better at Java (currentl ynot working)
+Java DiscordBot to learn
+
+Working:
+PingPong command
+JoinMessage
+
+Bugs:
+Join message contains weard username and guildname
