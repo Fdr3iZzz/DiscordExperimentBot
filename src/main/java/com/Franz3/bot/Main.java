@@ -1,5 +1,6 @@
 package com.Franz3.bot;
 
+import com.Franz3.bot.events.DeleteMessages;
 import com.Franz3.bot.events.OnJoinEvents;
 import com.Franz3.bot.events.PingEvents;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -20,13 +21,16 @@ public class Main {
         String token = config.get("TOKEN");
 
         JDA jda = JDABuilder.createDefault(token)
-                .setActivity(Activity.watching("Darkness"))
+                .setActivity(Activity.watching("Time passing by"))
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                 .enableIntents(GatewayIntent.GUILD_MEMBERS)
                 //listener
                 .addEventListeners(new PingEvents())
                 .addEventListeners(new OnJoinEvents())
+                .addEventListeners(new DeleteMessages())
                 .build();
+
+        //#getTextChannelById(999840182452891799).sendMessage("@Franz3 Server Running");
     }
 }

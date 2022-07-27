@@ -15,7 +15,7 @@ public class PingEvents extends ListenerAdapter {
         if (content.equalsIgnoreCase("/ping")){
             MessageChannel channel = event.getChannel();
             System.out.println("Event ist" + event.getChannel());
-            channel.sendMessage("Pong").queue();
+            channel.sendMessage("Pong! " + event.getAuthor().getAsMention()).queue();
         }
     }
 
