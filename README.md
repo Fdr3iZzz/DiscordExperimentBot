@@ -6,4 +6,9 @@ PingPong command,
 JoinMessage
 
 Bugs:
-Join message contains weard username and guildname
+non
+
+Todo:
+Commands working with discord prefix (/)
+Message delete on request
+Bot message on boot
