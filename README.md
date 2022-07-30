@@ -2,13 +2,16 @@
 Java DiscordBot to learn
 
 Working:
-PingPong command, 
-JoinMessage
+1. Ping-Pong command
+2. OnJoinMessage with mention and guild
+3. OnReadyMessage
+4. DeleteMessages with number of messages and slash command
 
 Bugs:
-non
+non so far
 
 Todo:
-Commands working with discord prefix (/)
-Message delete on request
-Bot message on boot
+- Delete all messages in used channel
+- permission check
+- music bot
+- threat creation with inputed title and reactions to change title
