@@ -1,16 +1,16 @@
-# DiscordExperimentBot
-Java DiscordBot to learn
+# DiscordExperimentBot in Java
+Private  fun project for me to learn Java
 
-Working:
+### Working:
 1. Ping-Pong command
 2. OnJoinMessage with mention and guild
 3. OnReadyMessage
 4. DeleteMessages with number of messages and slash command
 
-Bugs:
-non so far
+### Bugs:
+- non so far
 
-Todo:
+### Todo:
 - Delete all messages in used channel
 - permission check
 - music bot
