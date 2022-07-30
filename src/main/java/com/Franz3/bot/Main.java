@@ -1,16 +1,17 @@
 package com.Franz3.bot;
 
-import com.Franz3.bot.events.DeleteMessages;
+import com.Franz3.bot.commands.DeleteMessages;
 import com.Franz3.bot.events.OnJoinEvents;
+import com.Franz3.bot.events.OnReadyMessage;
 import com.Franz3.bot.events.PingEvents;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.requests.GatewayIntent;
-
-import javax.security.auth.login.LoginException;
 
 public class Main {
 
@@ -29,8 +30,19 @@ public class Main {
                 .addEventListeners(new PingEvents())
                 .addEventListeners(new OnJoinEvents())
                 .addEventListeners(new DeleteMessages())
-                .build();
+                .addEventListeners(new OnReadyMessage())
+                .build().awaitReady();
 
-        //#getTextChannelById(999840182452891799).sendMessage("@Franz3 Server Running");
+        // adds slash commands
+        Guild guild = jda.getGuildById("592382416069459968");
+        if (guild != null){
+            guild.upsertCommand("delete", "will delete the inputed amount of messages in the channel it is used in")
+                    .addOption(OptionType.INTEGER, "amount", "number of messages deleted",true)
+                    .queue();
+        }else {
+            System.out.println("ERROR, Guild ID for registering the delete command is wrong");
+        }
+
+
     }
 }

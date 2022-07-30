@@ -9,9 +9,8 @@ public class OnJoinEvents extends ListenerAdapter {
     public void onGuildMemberJoin(@NotNull GuildMemberJoinEvent event) {
 
         if (event.getUser().isBot()) return;
-
-        String channel = "999840182452891799";
-        event.getGuild().getTextChannelById("channel").sendMessage("Hey, " +  event.getUser().getAsMention() + " and well cum to: " + event.getGuild().getName()).queue();
+        event.getGuild().getTextChannelById(999840182452891799L).sendMessage("Hey, " +  event.getUser().getAsMention() + " and well cum to: " + event.getGuild().getName()).queue();
 
     }
+
 }
